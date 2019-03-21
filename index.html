@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Lords Mobile Calculator</title>
+    
+    <script type="text/javascript" src="rgbtrbgrtb.js"></script>
+    <script type="text/javascript" src="rss.js"></script>
+    
+    <style>
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 50%;
+        background-color: darkgrey;
+        color: black;
+        text-align: center;
+        left: 25%;
+        border-radius: 25px;
+      }
+      #your {
+      background-color: #7a77ff;
+      }
+      #enemy{
+      background-color: #ff7777;
+      }
+    </style>
+    
+    
+  </head>
+  <body bgcolor="silver">
+  
+    <h1><center>dew's Lords Mobile calculator:</center></h1>
+    <center>We are looking for people that can help with the site! If you are motivated to help us please fill in this <a target="_blank" href="REMOVED EXTERNAL LINK FOR UPLOADING TO UC">form</a>.</center>
+    <br>
+    <center>Hello there!</center>
+    <center>This tool is used to calculate battle outcomes in the popular game Lords Mobile.</center>
+    <center>NOTE: This doesnt include siege engine or wall!</center>
+    <center>We are updating the site regularly this takes alot of time tough! If you appreciate our efforts a <a target="_blank" href="REMOVED REMOVED EXTERNAL LINK FOR UPLOADING TO UC">donation</a> would be nice :)</center>
+    
+    <hr>
+    <section id="your">
+    <h1><center>Your army:</center></h1>
+    <center>EACH BOX NEEDS TO HAVE A VALUE!! ALWAYS WRITE THE NUMBER IN FULL (not 1 hundred but 100)!! IF YOU DONT HAVE TROOPS OF T2/3/4 LEAVE IT AT 0!!</center>
+    <h5><center>T1:</center></h5>
+    
+    <img src="/troops/grunt.jpg" width="100" height="100" align="left" style="margin-left: 29%"/>
+    <img src="/troops/archer.jpg" width="100" height="100" style="margin-left: 12%"/>
+    <img src="/troops/cataphract.jpg" width="100" height="100" align="right" style="margin-right: 25%"/>
+    
+    <center>
+    T1 Infantry:<input type="text" id="t1inf" value="0" onkeyup="rawpower()"/>
+    T1 Ranged:<input type="text" id="t1ran" value="0" onkeyup="rawpower()"/>
+    T1 Cavalry:<input type="text" id="t1cav" value="0" onkeyup="rawpower()"/>
+    </center>
+    
+    <h5><center>T2:</center></h5>
+    
+    <img src="/troops/gladiator.jpg" width="100" height="100" align="left" style="margin-left: 29%"/>
+    <img src="/troops/sharpshooter.jpg" width="100" height="100" style="margin-left: 12%"/>
+    <img src="/troops/reptilian rider.jpg" width="100" height="100" align="right" style="margin-right: 25%"/>
+    
+    <center>
+    T2 Infantry:<input type="text" id="t2inf" value="0" onkeyup="rawpower()"/>
+    T2 Ranged:<input type="text" id="t2ran" value="0" onkeyup="rawpower()"/>
+    T2 Cavalry:<input type="text" id="t2cav" value="0" onkeyup="rawpower()"/>
+    </center>
+   
+    <h5><center>T3:</center></h5>
+    
+    <img src="/troops/royal guard.jpg" width="100" height="100" align="left" style="margin-left: 29%"/>
+    <img src="/troops/stealth sniper.jpg" width="100" height="100" style="margin-left: 12%"/>
+    <img src="/troops/royal cavalry.jpg" width="100" height="100" align="right" style="margin-right: 25%"/>
+    
+    <center>
+    T3 Infantry:<input type="text" id="t3inf" value="0" onkeyup="rawpower()"/>
+    T3 Ranged:<input type="text" id="t3ran" value="0" onkeyup="rawpower()"/>
+    T3 Cavalry:<input type="text" id="t3cav" value="0" onkeyup="rawpower()"/>
+    </center>
+    
+    <h5><center>T4:</center></h5>
+    
+    <img src="/troops/heroic fighter.jpg" width="100" height="100" align="left" style="margin-left: 29%"/>
+    <img src="/troops/heroic cannoneer.jpg" width="100" height="100" style="margin-left: 12%"/>
+    <img src="/troops/ancient drake ridder.jpg" width="100" height="100" align="right" style="margin-right: 25%"/>
+    
+    <center>
+    T4 Infantry:<input type="text" id="t4inf" value="0" onkeyup="rawpower()"/>
+    T4 Ranged:<input type="text" id="t4ran" value="0" onkeyup="rawpower()"/>
+    T4 Cavalry:<input type="text" id="t4cav" value="0" onkeyup="rawpower()"/>
+    </center>
+    
+    <h5><center>Infantry % Boosts:</center></h5>
+    
+    <center>
+    ATK:<input type="text" id="infatk" value="0" onkeyup="rawpower()"/>
+    DEF:<input type="text" id="infdef" value="0" onkeyup="rawpower()"/>
+    HP:<input type="text" id="infhp" value="0" onkeyup="rawpower()"/>
+    </center>
+    
+    <h5><center>Ranged % Boosts:</center></h5>
+    
+    <center>
+    ATK:<input type="text" id="ranatk" value="0" onkeyup="rawpower()"/>
+    DEF:<input type="text" id="randef" value="0" onkeyup="rawpower()"/>
+    HP:<input type="text" id="ranhp" value="0" onkeyup="rawpower()"/>
+    </center>
+    
+    <h5><center>Cavarly % Boosts:</center></h5>
+    
+    <center>
+    ATK:<input type="text" id="cavatk" value="0" onkeyup="rawpower()"/>
+    DEF:<input type="text" id="cavdef" value="0" onkeyup="rawpower()"/>
+    HP:<input type="text" id="cavhp" value="0" onkeyup="rawpower()"/>
+    </center>
+    
+    <h5><center>ARMY % Boosts:</center></h5>
+    
+    <center>
+    ATK:<input type="text" id="armyatk" value="0" onkeyup="rawpower()"/>
+    DEF:<input type="text" id="armydef" value="0" onkeyup="rawpower()"/>
+    HP:<input type="text" id="armyhp" value="0" onkeyup="rawpower()"/>
+    </center>
+    
+    <br>
+    
+    <hr>
+    
+    <center>*RawPower is the value we are using to indicate how strong an army is.*</center>
+    
+    <center><h1>Your RawPower:</h1></center>
+    <center><h3><p id="rawpower">This will display your RawPower</p></h3></center>
+    
+    <hr>
+   
+    <center><h1>Resources needed:</h1></center>
+    <center><h4><p id="food">This will display the amount of food you need to train this army.</p></h4></center>
+    <center><h4><p id="stone">This will display the amount of stone you need to train this army.</p></h4></center>
+    <center><h4><p id="timber">This will display the amount of timber you need to train this army.</p></h4></center>
+    <center><h4><p id="ore">This will display the amount of ore you need to train this army.</p></h4></center>
+    <center><h4><p id="gold">This will display the amount of gold you need to train this army.</p></h4></center>
+    <center><button onclick="rss()">Resource Calculator</button></center>
+  
+    
+    
+    
+    <br>
+    
+    </section>
+    
+    <hr>
+    
+    <section id="enemy">
+    <h1><center>Enemy army:</center></h1>
+    <center>EACH BOX NEEDS TO HAVE A VALUE!! ALWAYS WRITE THE NUMBER IN FULL (not 1 hundred but 100)!! IF YOU DONT HAVE TROOPS OF T2/3/4 LEAVE IT AT 0!!</center>
+    <h5><center>T1:</center></h5>
+    
+    <img src="/troops/grunt.jpg" width="100" height="100" align="left" style="margin-left: 29%"/>
+    <img src="/troops/archer.jpg" width="100" height="100" style="margin-left: 12%"/>
+    <img src="/troops/cataphract.jpg" width="100" height="100" align="right" style="margin-right: 25%"/>
+    
+    <center>
+    T1 Infantry:<input type="text" id="t1infopp" value="0" onkeyup="rawpoweropp()"/>
+    T1 Ranged:<input type="text" id="t1ranopp" value="0" onkeyup="rawpoweropp()"/>
+    T1 Cavalry:<input type="text" id="t1cavopp" value="0" onkeyup="rawpoweropp()"/>
+    </center>
+    
+    <h5><center>T2:</center></h5>
+    
+    <img src="/troops/gladiator.jpg" width="100" height="100" align="left" style="margin-left: 29%"/>
+    <img src="/troops/sharpshooter.jpg" width="100" height="100" style="margin-left: 12%"/>
+    <img src="/troops/reptilian rider.jpg" width="100" height="100" align="right" style="margin-right: 25%"/>
+    
+    <center>
+    T2 Infantry:<input type="text" id="t2infopp" value="0" onkeyup="rawpoweropp()"/>
+    T2 Ranged:<input type="text" id="t2ranopp" value="0" onkeyup="rawpoweropp()"/>
+    T2 Cavalry:<input type="text" id="t2cavopp" value="0" onkeyup="rawpoweropp()"/>
+    </center>
+    
+    <h5><center>T3:</center></h5>
+    
+    <img src="/troops/royal guard.jpg" width="100" height="100" align="left" style="margin-left: 29%"/>
+    <img src="/troops/stealth sniper.jpg" width="100" height="100" style="margin-left: 12%"/>
+    <img src="/troops/royal cavalry.jpg" width="100" height="100" align="right" style="margin-right: 25%"/>
+    
+    <center>
+    T3 Infantry:<input type="text" id="t3infopp" value="0" onkeyup="rawpoweropp()"/>
+    T3 Ranged:<input type="text" id="t3ranopp" value="0" onkeyup="rawpoweropp()"/>
+    T3 Cavalry:<input type="text" id="t3cavopp" value="0" onkeyup="rawpoweropp()"/>
+    </center>
+    
+    <h5><center>T4:</center></h5>
+    
+    <img src="/troops/heroic fighter.jpg" width="100" height="100" align="left" style="margin-left: 29%"/>
+    <img src="/troops/heroic cannoneer.jpg" width="100" height="100" style="margin-left: 12%"/>
+    <img src="/troops/ancient drake ridder.jpg" width="100" height="100" align="right" style="margin-right: 25%"/>
+    
+    <center>
+    T4 Infantry:<input type="text" id="t4infopp" value="0" onkeyup="rawpoweropp()"/>
+    T4 Ranged:<input type="text" id="t4ranopp" value="0" onkeyup="rawpoweropp()"/>
+    T4 Cavalry:<input type="text" id="t4cavopp" value="0" onkeyup="rawpoweropp()"/>
+    </center>
+    
+    <h5><center>Infantry % Boosts:</center></h5>
+    
+    <center>
+    ATK:<input type="text" id="infatkopp" value="0" onkeyup="rawpoweropp()"/>
+    DEF:<input type="text" id="infdefopp" value="0" onkeyup="rawpoweropp()"/>
+    HP:<input type="text" id="infhpopp" value="0" onkeyup="rawpoweropp()"/>
+    </center>
+    
+    <h5><center>Ranged % Boosts:</center></h5>
+    
+    <center>
+    ATK:<input type="text" id="ranatkopp" value="0" onkeyup="rawpoweropp()"/>
+    DEF:<input type="text" id="randefopp" value="0" onkeyup="rawpoweropp()"/>
+    HP:<input type="text" id="ranhpopp" value="0" onkeyup="rawpoweropp()"/>
+    </center>
+    
+    <h5><center>Cavarly % Boosts:</center></h5>
+    
+    <center>
+    ATK:<input type="text" id="cavatkopp" value="0" onkeyup="rawpoweropp()"/>
+    DEF:<input type="text" id="cavdefopp" value="0" onkeyup="rawpoweropp()"/>
+    HP:<input type="text" id="cavhpopp" value="0" onkeyup="rawpoweropp()"/>
+    </center>
+    
+    <h5><center>ARMY % Boosts:</center></h5>
+    
+    <center>
+    ATK:<input type="text" id="armyatkopp" value="0" onkeyup="rawpoweropp()"/>
+    DEF:<input type="text" id="armydefopp" value="0" onkeyup="rawpoweropp()"/>
+    HP:<input type="text" id="armyhpopp" value="0" onkeyup="rawpoweropp()"/>
+    </center>
+    
+    <br>
+    
+    <hr>
+    
+    <center>*RawPower is the value we are using to indicate how strong an army is.*</center>
+    
+    <center><h1>Enemy RawPower:</h1></center>
+    <center><h3><p id="rawpoweropp">This will display enemy RawPower</p></h3></center>
+    
+    <br>
+    
+    </section>
+    
+    <hr>
+   
+    <center><button onclick="battle()">Battle out come</button></center>
+    <br>
+    <br>
+    
+    <div class="footer">
+      <center>Tool made by dew | <a target= "_blank" href="/contact.html">Contact</a> | <a target= "_blank" href="/update.html">Update Log</a></center>
+    </div>
+    
+  </body>
+</html>
